@@ -1,8 +1,18 @@
 
+
 import './App.css'
-import Batsman from './batsan'
-import Counter from'./counter'
+import Counter from './counter'
+import Batsman from './runs'
+
+
+
 function App() {
+
+  
+
+  
+
+
   
   function handleClick(){
     alert('I am clicked.')
@@ -20,13 +30,15 @@ function App() {
     alert(newNum)
   }
 
+ 
+
   return (
     <>
       
       <h3>Vite + React</h3>
-
       <Counter ></Counter>
       <Batsman></Batsman>
+
 
 
 
