@@ -1,63 +1,64 @@
-
-
-import './App.css'
-import Counter from './counter'
-import Batsman from './runs'
-
-
+import "./App.css";
+import Counter from "./counter";
+import Baller from "./batsman";
 
 function App() {
-
-  
-
-  
-
-
-  
-  function handleClick(){
-    alert('I am clicked.')
+  // EVENT HANDLER:
+  // Outside normal Function:
+  function handleClick() {
+    alert("Outside normal Function.");
   }
 
-  const handleclick3=()=>{
-    alert("Clicked3.")
+  // Outside Arrow Function:
+  const handleClick3 = () => {
+    alert("Outside Arrow Function.");
+  };
 
-  }
+  // Pass Parameter Outside Arrow Function:
 
-  //Using Parameter:
-
-  const handleADD5 = (num)=>{
-    const newNum=num+5;
-    alert(newNum)
-  }
-
- 
+  const handleAdd5 = (num) => {
+    const newNum = num + 5;
+    alert(newNum);
+  };
 
   return (
     <>
-      
       <h3>Vite + React</h3>
-      <Counter ></Counter>
-      <Batsman></Batsman>
 
+      {/* useState Component call: */}
+      <Baller></Baller>
+      <Counter></Counter>
 
+      {/* EVENT HANDLER */}
 
+      {/* Outside normal function */}
+      <button onClick={handleClick}>Click Me 1</button>
 
-      <button onClick={handleClick}>Click Me</button>
+      {/* Inside normal function */}
+      <button
+        onClick={function handleClick2() {
+          alert("Inside normal function.");
+        }}
+      >
+        Click Me 2
+      </button>
 
-      <button onClick={ function handleClick2(){
-        alert("Clicked2.")
-      }}>Click Me2</button>
-      
-      <button onClick={handleclick3}>Click Me3</button>
+      {/* Outside Arrow function */}
+      <button onClick={handleClick3}>Click Me 3</button>
 
-      <button onClick={()=> alert("Clicked4")}>Click4</button>
+      {/* Inside Arrow function */}
+      <button
+        onClick={() => {
+          alert("Inside Arrow Function.");
+        }}
+      >
+        Click Me 4
+      </button>
 
-      {/* //Taking Parameter: */}
-
-      <button onClick={()=>handleADD5(5)}>Click Add 5</button>
-      
+      {/* Pass Parameter Outside Arrow Function: */}
+      <button onClick={() => handleAdd5(10)}>Add 5</button>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

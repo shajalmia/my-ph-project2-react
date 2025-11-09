@@ -1,26 +1,16 @@
-import { useState } from "react";
+import { useState } from "react"
 
 export default function Counter(){
+    const [count,setCount] = useState(0);
 
-    const [count,setCount]= useState(0);
-    const handleAdd = () =>{
-        const updateCount=count+1;
-        setCount(updateCount);
-
-
-
+    const addCount=()=>{
+        const newCount=count+1;
+        setCount(newCount);
     }
-
-    const counterStyle={
-        border:'2px solid red'
-    };
-
-
     return(
-        <div style={counterStyle}>
-            <h3>Count: {count}</h3>
-            <button onClick={handleAdd}>Add</button>
-
+        <div className="card1">
+            <h3>Count:{count}</h3>
+            <button onClick={addCount}>Add</button>
         </div>
     )
 }
